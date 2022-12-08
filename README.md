@@ -31,48 +31,66 @@
 ## Contact & Authors 
 -->  
 
-## Table of Contents
 
-## Introduction of IBMC  
-> **서버의 메인보드**에 내장된 컨트롤러로 **시스템 관리 SW와 HW간의 인터페이스**를 통해 **On Device AI**을 활용한 **지능형 소비전력 + 장애관리**를 가능하도록 하는 **펌웨어 SW 기술**  
+<details>
+<summary>Table Of Contents</summary>
+<div markdown="1">       
+
+1. [Introduction of IBMC](#introduction-of-ibmc)
+2. [Requirements](#requirements)  
+\- 2.1 [빌드루트 환경 구성](#1-빌드루트-환경-구성)
+
+3. 
+
+
+</div>
+</details>
+
+
+
+
+## Introduction of IBMC
+
 <br/><br/>
 
-+) 이미지
+![no image](https://lh3.googleusercontent.com/fife/AAbDypCtK6BI63Yy9-Xu94yEFQKfSzcNHH43DU-EPHJSTTorhtJB_9J7Ut_HWCH-LnnfglWS5kZSpDrgyQ9F3ptpsF747MxiuJCcs_tY4m-Qhwlv7_Qa6k6FSSv8kgAIuvUTaHDPqy3XlyrvuVsFHA2O9QMQqR8kAy_i800Pm4JmWmVF6LBp1vG751Ek_hoEcTQZJRtgSqcW03AHVf8fpcSz9eYVbPrvMaP2l1zM3Rb6qN0vY-qCZkgVQ04W8loI5pWx8AlwuQKBa6OwTSo6fWBnuGgyDDsVOstmer17P-qmRwEa1LqmX0JyowPcf1-l9aD0sx64STwABXDsJFLRXmHNGnw-nqhAyNfztobJbrI9lbC9KhIlsXr2Om-CDDobYm0X2tI3ZcVREvVAtVU-exo7USpLBJPZVWzEtu5fNVrnefcLXAiRLebS2kMbbvZdTKFzG-O13lwqTzk58ykXC1yl_2di808JYdG5A9ARHm9MTrH1FKYqQ_G5RMiopVfvzZpOvQExprQIyR2i3v7ZwmZCLUlEL4NJh59dqlMJ4NzDf99Lq7579AmnwAVNp5A98tuAQW9egIOp4bahv0YhylBvqG5Z_43o-0c8ok71lWKzbm1lvU9Ps975op3j-VW0vRApj49RVIo0GFCJtXoRpKrPi6x73ETmB7hQsIV-8jL1Tf1hVm82yinJ5xe-87iVJopw9FUBy5pf5zzIhX905HyCCAY6oS1T6Nb1vcFUMNUQSMw77QDHqjifXk6Z8M44XgAi-EEkbS2dqQonUxOXJHPUWtXPSGt_8kvl4gYsCboq-SBaZyib4OOIYSYkM0DUIysEFIdVfiz9uq0pXUoFiFNQSyOPsbHoL0E-y4W0NcXfHOhmTQ6HeQsDsmirES61r5m5oVzOqTZE4UCtWMxwF5jgeeO7hwJfTfwkhpRXdkraz6ZkdgpFeI5QFm4qzfqopqFSDgcQ2LI6qIHso9tgaec-bQbGIDBruRdKbSQffwqt9y1SSNG1waBaw4GQW5-DkrP71OJVNQGz2QQiwyEQuTCzprp9t3TxBwmFe1EgkQNSGrM4Bv5OFvWj3KdOAZhaqJdnPU7CXXKL74PVS48GZo3DytRuAE-HntTj8eyrHQbuaibVi2CeAL1lo2tYOM_FANOKENfoos2AqKglSxsOt43VcytGfH4Eow2H5IXW15_aPvNn4J7oiveS9e7bs_7gdXw7Ztze1qHFlv9Xc0R7imlYkfoxqKRsElJcS5yzCqr1oiFqRAenAKz1R_andpj4vNVnp1kRZ4CK7kJrl84j9bK0I-x8HGaSaHFpOYw6q7nd4F5Op9eCI94ybOtChKwzT4Ous06X8PTaVTtdrcGMK0WcQMKJ_1m7itLdTBYfgIKWkfCuWpJdy-nECOYGM6CPx0iPFfUMfkb3ZqNjWV9m-oMG1DIQVIYSRp0xwJ8inLwLjDrtkMcyqUav6lizgXrPpv-fFmfkQC2DnsjcjHUJed0=w1278-h1307)  
+
+<br/><br/>
+>**서버의 메인보드에 내장된 컨트롤러로 시스템 관리 S/W와 H/W간의 인터페이스를 통해 On Device AI을 활용한 지능형 소비전력 + 장애 관리 펌웨어 SW 기술**   
+
 <br/><br/>
 
 ## Requirements  
-IBMC를 사용하기 전 해야하는 것들  
+
 ### 1. 빌드루트 환경 구성
 1. 파일 내려받기 ( 현재 위치 : /home/keti/Workspace )  
 <https://buildroot.org/downloads/buildroot-2015.11.tar.gz>  
 
 1. 내려받은 압축 파일 해제  
-	```bash
-	$ tar -xvzf buildroot-2015.11.tar.gz
-	```
+```bash
+$ tar -xvzf buildroot-2015.11.tar.gz
+```
 	
-	1. 해당 디렉토리 진입  
-	```bash
-  $ cd buildroot-2015.11.tar.gz
-  ```  
+3. 해당 디렉토리 진입  
+```bash
+$ cd buildroot-2015.11.tar.gz
+```  
 	
-	1. KETI-IPMI.tar 압축을 풀어 ./source/ast_app 디렉토리에 복사  
-  ```bash
-  $ tar -xvzf KETI-IPMI.tar  
-  $ cp -r KETI-IPMB ./source/ast_app  
-  ```  
+4. KETI-IPMI.tar 압축을 풀어 ./source/ast_app 디렉토리에 복사  
+```bash
+$ tar -xvzf KETI-IPMI.tar  
+$ cp -r KETI-IPMB ./source/ast_app  
+```  
   
-  1. prepare_buildTool.sh 를 실행
-  ```bash
-  $ ./prepare_buildTool.sh
-  ```  
+5. prepare_buildTool.sh 를 실행
+```bash
+$ ./prepare_buildTool.sh
+```  
 		
-  
-  
-  buildroot 공식 홈페이지에서 권장하는 패키지와 옵션 패키지  
-  - Mandatory : <https://buildroot.org/downloads/manual/manual.html#requirement-mandatory>
-  - Optional : <https://buildroot.org/downloads/manual/manual.html#requirement-optional>  
-  
+- buildroot 공식 홈페이지에서 권장하는 패키지와 옵션 패키지  
+	- Mandatory : <https://buildroot.org/downloads/manual/manual.html#requirement-mandatory>
+	- Optional : <https://buildroot.org/downloads/manual/manual.html#requirement-optional>  
+<br/><br/>
   
   
 ### 2. Buildroot menuconfig  
@@ -101,15 +119,18 @@ IBMC를 사용하기 전 해야하는 것들
  	- ex) armv6-aspeed-linux-gnueabi  
  
  > External toolchain gcc version  
- 	- External toolchain의 gcc 버전 확인 후 해당 버전으로 설정
 ```bash
-$ ./armv6-aspeed-linux-gnueabi-gcc –v
+External toolchain의 gcc 버전 확인    
+$ ./armv6-aspeed-linux-gnueabi-gcc –v  
+
+확인 후 해당 버전으로 설정
 ```
 
   
 > External toolchain C library를 glibc/eglibc로 변경
 > 기타 Toolchain 설정  
 
+<br/><br/>
 
 
 ### 3. KETI-IPMI 빌드 (미완)
