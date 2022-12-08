@@ -1,50 +1,19 @@
 # Public_KETI-IBMC 
-<br/><br/>
-<!--## 목차 
-<br/><br/>
-## 프로젝트 목적 및 용도 
-- 이 프로젝트는 무엇을 위한 것인가
-- 어떤 문제를 해결할 수 있는가
-- 어떤 사람들이 이 프로젝트를 사용하면 좋은가
-- 어떻게 작동하는가
-<br/><br/>
-## 프로젝트를 시작하는 방법 
-프로젝트를 처음 사용하기 위해 필요한 내용
-- 프로젝트를 설치, 사용하기 위해 필요한 전제조건이 있는가
-- 어떻게 설치, 사용, 테스트 하는가
-- 설치 가이드 문서는 어디에 있는가
-  - 실행환경 ( OS, 컴파일러 혹은 하드웨어 관련 / CPU, RAM / Built with C++.. )
-  - 코드 실행전 설치해야할 패키지 혹은 의존성이 걸리는 문제들<br/>
-<br/><br/>
-## 중요 코드파일 
-해당 파일이 무슨 역할인지 설명
-<br/><br/>
-## 사용 방법 
-프로그램을 어떻게 작동시키는가, usage example 을 함께 작성
-<br/><br/>
-## 버전 관리 (업데이트 내역)
-<br/><br/>
-## License 
-<br/><br/>
-## Contributing 
-<br/><br/>
-## Contact & Authors 
--->  
+<br/>
 
 
-<details>
-<summary>Table Of Contents</summary>
-<div markdown="1">       
-
+## Table of Contents
 1. [Introduction of IBMC](#introduction-of-ibmc)
 2. [Requirements](#requirements)  
-\- 2.1 [빌드루트 환경 구성](#1-빌드루트-환경-구성)
+	2.1. [Buildroot 환경 구성](#1-buildroot-환경-구성)  
+	2.2. [Buildroot menuconfig](#2-buildroot-menuconfig)
 
-3. 
-
-
-</div>
-</details>
+3. [KETI-IPMI 빌드](#3-keti-ipmi-빌드)  
+	3.1. [AST_2500](#ast_2500)  
+	3.2. [AST_2600](#ast_2600)
+4. [Buildroot 이미지 빌드 방법](#4-buildroot-이미지-빌드-방법)  
+	4.1. [AST_2500](#ast_2500)  
+	4.2. [AST_2600](#ast_2600)
 
 
 
@@ -62,7 +31,7 @@
 
 ## Requirements  
 
-### 1. 빌드루트 환경 구성
+### 1. Buildroot 환경 구성
 1. 파일 내려받기 ( 현재 위치 : /home/keti/Workspace )  
 <https://buildroot.org/downloads/buildroot-2015.11.tar.gz>  
 
@@ -133,7 +102,7 @@ $ ./armv6-aspeed-linux-gnueabi-gcc –v
 <br/><br/>
 
 
-### 3. KETI-IPMI 빌드 (미완)
+### 3. KETI-IPMI 빌드
 
 #### AST_2500
 ```bash
@@ -154,12 +123,12 @@ $ make
 
 ### 4. Buildroot 이미지 빌드 방법
 
-- AST_2500
+#### AST_2500 
 ```
 $ ./build_option.sh
 ```
 
-- AST_2600 
+#### AST_2600 
 	- SPI 사용해서 올림
 
 
