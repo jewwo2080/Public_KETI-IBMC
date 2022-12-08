@@ -42,31 +42,79 @@
 
 ## Requirements  
 IBMC를 사용하기 전 해야하는 것들  
-1. 빌드루트 환경 구성  
-  1. 파일 내려받기  
-  <https://buildroot.org/downloads/buildroot-2015.11.tar.gz>  
-  2. 내려받은 파일 압축 해제  
+### 1. 빌드루트 환경 구성
+1. 파일 내려받기 ( 현재 위치 : /home/keti/Workspace )  
+<https://buildroot.org/downloads/buildroot-2015.11.tar.gz>  
+
+1. 내려받은 압축 파일 해제  
+	```bash
+	$ tar -xvzf buildroot-2015.11.tar.gz
+	```
+	
+	1. 해당 디렉토리 진입  
+	```bash
+  $ cd buildroot-2015.11.tar.gz
+  ```  
+	
+	1. KETI-IPMI.tar 압축을 풀어 ./source/ast_app 디렉토리에 복사  
   ```bash
-  tar -xvzf buildroot-2015.11.tar.gz
+  $ tar -xvzf KETI-IPMI.tar  
+  $ cp -r KETI-IPMB ./source/ast_app  
   ```  
   
-  3. 해당 디렉토리 진입  
+  1. prepare_buildTool.sh 를 실행
   ```bash
-  cd buildroot-2015.11.tar.gz
-  ```
+  $ ./prepare_buildTool.sh
+  ```  
+		
   
   
-  4. KETI-IPMI.tar 압축을 풀어 ./source/ast_app 디렉토리에 복사
-  ```bash
-  tar -xvzf KETI-IPMI.tar  
-  cp -r KETI-IPMB ./source/ast_app  
-  ```
+  buildroot 공식 홈페이지에서 권장하는 패키지와 옵션 패키지  
+  - Mandatory : <https://buildroot.org/downloads/manual/manual.html#requirement-mandatory>
+  - Optional : <https://buildroot.org/downloads/manual/manual.html#requirement-optional>  
   
-  5. prepare_buildTool.sh 를 실행
-  ```bash
-  ./prepare_buildTool.sh
-  ```
   
+  
+### 2. Buildroot menuconfig  
+ 압축을 해제한 디렉토리에서 make menuconfig를 입력하면 Buildroot에 대한 전반적인 설정이 가능하다. 가장 먼저 아래와 같이 설정한다.
+ 
+ 1. Target Option 설정  
+ - Target Architecture : ARM (little endian)  
+ - Target binary Format : ELF  
+ - Target Architecture Variant : arm1176jzf-s  
+ - Target ABI : EABI  
+ - Floating point strategy : Soft float  
+ - ARM instruction set : ARM    
+ 
+ 2. Toolchain 설정  
+ - Toolchain type : External toolchain  
+ - Toolchain : External Toolchain -> Pre-installed toolchain  
+ - Toolchain origin    
+ 	- downloaded and installed : Toolchain을 다운받을 주소 입력  
+ 	- Pre-installed toolchain : Toolchain이 설치된 절대경로 입력  
+ - Toolchain path를 절대경로로 변경  
+ 	- Toolchain 경로 : /home/keti/Workspace/buildroot-2015.11/source/armv6-aspeed-linux-gnueabi  
+ - Toolchain prefix 입력  
+ ex) armv6-aspeed-linux-gnueabi  
+ - External toolchain gcc version  
+ 	- External toolchain의 gcc 버전 확인 후 해당 버전으로 설정
+ 	```bash
+ 	$ ./armv6-aspeed-linux-gnueabi-gcc –v
+	```  
+- External toolchain C library를 glibc/eglibc로 변경
+- 기타 Toolchain 설정  
+
+3. System Configuration 
+4. Kernel
+5. Target Packages
+6. Filesystem Images
+7. Bootloaders
+8. 
+ 
+   
+ 
+
+
 ## Files
 - 중요한 코드파일 역할 설명
 
