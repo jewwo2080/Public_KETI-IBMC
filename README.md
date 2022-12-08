@@ -56,7 +56,7 @@ $ cp -r KETI-IPMB ./source/ast_app
 $ ./prepare_buildTool.sh
 ```  
 		
-- buildroot 공식 홈페이지에서 권장하는 패키지와 옵션 패키지  
+- Buildroot 공식 홈페이지에서 권장하는 패키지와 옵션 패키지  
 	- Mandatory : <https://buildroot.org/downloads/manual/manual.html#requirement-mandatory>
 	- Optional : <https://buildroot.org/downloads/manual/manual.html#requirement-optional>  
 <br/><br/>
