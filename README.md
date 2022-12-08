@@ -79,41 +79,54 @@ IBMC를 사용하기 전 해야하는 것들
  압축을 해제한 디렉토리에서 make menuconfig를 입력하면 Buildroot에 대한 전반적인 설정이 가능하다. 가장 먼저 아래와 같이 설정한다.
  
  1. Target Option 설정  
- - Target Architecture : ARM (little endian)  
- - Target binary Format : ELF  
- - Target Architecture Variant : arm1176jzf-s  
- - Target ABI : EABI  
- - Floating point strategy : Soft float  
- - ARM instruction set : ARM    
+ > Target Architecture : ARM (little endian)  
+ > Target binary Format : ELF  
+ > Target Architecture Variant : arm1176jzf-s  
+ > Target ABI : EABI  
+ > Floating point strategy : Soft float  
+ > ARM instruction set : ARM    
  
  2. Toolchain 설정  
- - Toolchain type : External toolchain  
- - Toolchain : External Toolchain -> Pre-installed toolchain  
- - Toolchain origin    
+ > Toolchain type : External toolchain  
+ > Toolchain : External Toolchain -> Pre-installed toolchain  
+ 
+ > Toolchain origin    
  	- downloaded and installed : Toolchain을 다운받을 주소 입력  
  	- Pre-installed toolchain : Toolchain이 설치된 절대경로 입력  
- - Toolchain path를 절대경로로 변경  
+ 
+ > Toolchain path를 절대경로로 변경  
  	- Toolchain 경로 : /home/keti/Workspace/buildroot-2015.11/source/armv6-aspeed-linux-gnueabi  
- - Toolchain prefix 입력  
- ex) armv6-aspeed-linux-gnueabi  
- - External toolchain gcc version  
+ 
+ > Toolchain prefix 입력  
+ 	- ex) armv6-aspeed-linux-gnueabi  
+ 
+ > External toolchain gcc version  
  	- External toolchain의 gcc 버전 확인 후 해당 버전으로 설정
- 	```bash
- 	$ ./armv6-aspeed-linux-gnueabi-gcc –v
-	```  
-- External toolchain C library를 glibc/eglibc로 변경
-- 기타 Toolchain 설정  
+```bash
+$ ./armv6-aspeed-linux-gnueabi-gcc –v
+```
 
-3. Bootloaders
-- U-Boot Version : Local Directory 선택
-- Path to the local directory
-	- buildroot 로컬 디렉토리에 존재하는 U-boot의 경로를 설정
-- Board defconfig
-	- U-boot를 빌드할 때 Target Board 설정
-	- 
+  
+> External toolchain C library를 glibc/eglibc로 변경
+> 기타 Toolchain 설정  
+
+
 
 ### 3. KETI-IPMI 빌드
 
+#### AST_2500
+```bash
+$ make toolchain
+$ make
+$ cd /home/keti/Workspace/buildroot-2015.11/source/ast_app
+$ ./sk_make.sh
+```
+
+#### AST_2600
+```bash
+$ cd /home/keti/BMC_SDK
+$ cmake CMakeLists.txt
+$ make
    
  
 
