@@ -112,7 +112,7 @@ $ ./armv6-aspeed-linux-gnueabi-gcc –v
 
 
 
-### 3. KETI-IPMI 빌드
+### 3. KETI-IPMI 빌드 (미완)
 
 #### AST_2500
 ```bash
@@ -122,13 +122,25 @@ $ cd /home/keti/Workspace/buildroot-2015.11/source/ast_app
 $ ./sk_make.sh
 ```
 
+빌드 완료 후 BMC 부팅후 ~~ . .
+
 #### AST_2600
 ```bash
 $ cd /home/keti/BMC_SDK
 $ cmake CMakeLists.txt
 $ make
-   
- 
+```
+
+### 4. Buildroot 이미지 빌드 방법
+
+- AST_2500
+```
+$ ./build_option.sh
+```
+
+- AST_2600 
+	- SPI 사용해서 올림
+
 
 
 ## Files
