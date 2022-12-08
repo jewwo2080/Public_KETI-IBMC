@@ -104,13 +104,16 @@ IBMC를 사용하기 전 해야하는 것들
 - External toolchain C library를 glibc/eglibc로 변경
 - 기타 Toolchain 설정  
 
-3. System Configuration 
-4. Kernel
-5. Target Packages
-6. Filesystem Images
-7. Bootloaders
-8. 
- 
+3. Bootloaders
+- U-Boot Version : Local Directory 선택
+- Path to the local directory
+	- buildroot 로컬 디렉토리에 존재하는 U-boot의 경로를 설정
+- Board defconfig
+	- U-boot를 빌드할 때 Target Board 설정
+	- 
+
+### 3. KETI-IPMI 빌드
+
    
  
 
