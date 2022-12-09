@@ -271,15 +271,6 @@ $ restful_server
 
 
 
-## Files
-- 중요한 코드파일 역할 설명
-
-
-## Usage Example
-
-## License
-
-
 
 
 
