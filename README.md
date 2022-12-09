@@ -179,7 +179,7 @@ $ ipmitool –I <lan/lanplus> -H <BMC IP Address> -U <User ID> -P <User Password
 $ restful_server
 ```  
 
-### 3. KETI-REST 지원 API리스트 및 URL
+### 3. KETI-REST 지원 API 리스트 및 URL
 - System Information  
 
 |   ID   |    URL   |   Method   |                   상세기능                 |
@@ -198,7 +198,30 @@ $ restful_server
 
 <br/>
 
+- Server Health  
 
+|   ID   |    URL   |   Method   |                       상세기능                       |     
+| ------ | -------- | -----------   |---------------------------------------------------- |
+|  SH01  |   /sensor   |     GET    |    센서 상태 정보 제공                            |
+|  SH02  |   /sensor   |     PUT    |    센서 Threshold 값 수정                         |
+|  SH03  |   /event    |     GET    |    BIOS, Sensor, System Event Log 정보 제공       |
+
+- Configuration
+
+|   ID      |   URL    |   Method    |                   상세기능                        |
+|---------- |----------|-------------|---------------------------------------------------|
+|  CF01      |   /ddns    |     GET    |         Dynamic DNS 설정 정보 제공                      |  
+|  CF02      |   /ddns     |    POST     |        Dynamic DNS 설정 정보 수정                       |  
+|  CF03      |    /network    |    GET     |        BMC 네트워크 정보 제공                       |  
+|  CF04      |    /network    |    POST     |       BMC 네트워크 정보 수정                        |  
+|  CF05      |   /ntp     |   GET      |            NTP(Network Time Protocol) 정보 제공                   |  
+|  CF06      |   /ntp     |   POST      |           NTP 설정 정보 수정 (자동 / 수동)                    |  
+|  CF07      |   /smtp     |   GET      |           SMTP(Simple Message Transfer Protocol) 정보 제공                    |  
+|  CF08      |   /smtp     |   POST      |          SMTP 설정 정보 수정                     |  
+|  CF09      |   /ssl     |   POST      |          SSL 인증서 생성                     |  
+|  CF10      |   /ssl     |   GET      |          SSL 인증서 정보 제공                    |  
+|  CF11      |   /activedir     |   GET      |          Active Directory 그룹 정보 제공                 |  
+|  CF12      |   /activedir     |   POST      |          Active Directory 그룹 추가                 |  
 
 
 
