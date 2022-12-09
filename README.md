@@ -254,8 +254,14 @@ $ restful_server
 - Maintenance
 |   ID   |    URL   |   Method   |                       상세기능                       |  
 |---------- |----------|-------------|---------------------------------------------------|  
+|   BR01   |    /bmcReset   |   POST   |                      BMC 공장 초기화 기능 제공                       |  
+|   BR02   |    /wamReset  |   POST   |                      BMC 시스템 재부팅                       |  
 
-
+- Settings
+|   ID   |    URL   |   Method   |                       상세기능                       |  
+|---------- |----------|-------------|---------------------------------------------------|  
+|   SS01   |    /setting   |   GET   |                       BMC Setting 정보 제공                    |  
+|   SS02   |    /setting   |   PUT   |                       BMC Setting 정보 수정                    |  
 
 
 
