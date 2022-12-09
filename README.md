@@ -223,8 +223,7 @@ $ restful_server
 |  CF11      |   /activedir     |   GET      |          Active Directory 그룹 정보 제공                 |  
 |  CF12      |   /activedir     |   POST      |          Active Directory 그룹 추가                 |  
 |  CF13      |   /ldap     |   GET      |          LDAP 정보 제공                 |  
-|  CF14      |   /ldap     |   PUT      |          LDAP 설정 정보 수정                 |  
-|  CF13      |   /ldap     |   GET      |          LDAP 정보 제공                 |  
+|  CF14      |   /ldap     |   PUT      |          LDAP 설정 정보 수정                 |   
 |  CF15      |   /radius     |   GET      |         RADIUS 정보 제공                 |  
 |  CF16      |   /radius     |   POST      |         RADIUS 설정 정보 수정               |  
 |  CF17      |   /user    |   GET      |         BMC User 리스트 제공                |  
@@ -233,6 +232,7 @@ $ restful_server
 |  CF20      |   /activedir     |   DELETE      |          Active Directory 설정 정보 삭제                 |  
 
 - Main Page  
+
 |   ID   |    URL   |   Method   |                       상세기능                       |  
 |---------- |----------|-------------|---------------------------------------------------|  
 |   MP00  |   /main?INDEX=0    |   GET   |                   메인 페이지 모든 정보 제공                           |  
@@ -246,18 +246,21 @@ $ restful_server
 |   MP08  |   /main?INDEX=8    |   GET   |                센서 및 하드웨어 설치 유무 정보 제공                              |  
 
 - Remote Control
+
 |   ID   |    URL   |   Method   |                       상세기능                       |  
 |---------- |----------|-------------|---------------------------------------------------|  
 |   RC01   |    /power   |   GET   |                       Host 서버 전원 상태 정보 제공                      | 
 |   RC02   |    /power   |   PUT   |                       Host 서버 전원 상태 제어                      |  
 
 - Maintenance
+
 |   ID   |    URL   |   Method   |                       상세기능                       |  
 |---------- |----------|-------------|---------------------------------------------------|  
 |   BR01   |    /bmcReset   |   POST   |                      BMC 공장 초기화 기능 제공                       |  
 |   BR02   |    /wamReset  |   POST   |                      BMC 시스템 재부팅                       |  
 
 - Settings
+
 |   ID   |    URL   |   Method   |                       상세기능                       |  
 |---------- |----------|-------------|---------------------------------------------------|  
 |   SS01   |    /setting   |   GET   |                       BMC Setting 정보 제공                    |  
