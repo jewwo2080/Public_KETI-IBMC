@@ -6,15 +6,15 @@
 1. [Introduction of IBMC](#introduction-of-ibmc)
 2. [Requirements](#requirements)  
 	2.1. [Buildroot 환경 구성](#1-buildroot-환경-구성)  
-	2.2. [Buildroot menuconfig](#2-buildroot-menuconfig)
-
-3. [KETI-IPMI 빌드](#3-keti-ipmi-빌드)  
-	3.1. [AST_2500](#ast_2500)  
-	3.2. [AST_2600](#ast_2600)
-4. [Buildroot 이미지 빌드 방법](#4-buildroot-이미지-빌드-방법)  
-	4.1. [AST_2500](#ast_2500)  
-	4.2. [AST_2600](#ast_2600)
-
+	2.2. [Buildroot menuconfig](#2-buildroot-menuconfig)  
+	2.3. [KETI-IPMI 빌드](#3-keti-ipmi-빌드)  
+	2.4. [이미지 빌드](#4-이미지-빌드)  
+	2.5. [BMC에 이미지 쓰기](#5-bmc에-이미지-쓰기)  
+3. [Usage](#usage)  
+	3.1. [KETI-IPMI 실행](#1-keti-ipmi-실행)  
+	3.2. [IPMItool](#2-ipmitool)
+	3.3. [KETI-REST 실행](#3-keti-rest-실행)  
+	
 
 
 
@@ -112,7 +112,6 @@ $ cd /home/keti/Workspace/buildroot-2015.11/source/ast_app
 $ ./sk_make.sh
 ```
 
-빌드 완료 후 BMC 부팅후 ~~ . .
 
 #### AST_2600
 ```bash
@@ -121,12 +120,16 @@ $ cmake CMakeLists.txt
 $ make
 ```
 
-### 4. Buildroot 이미지 빌드 방법
-<br/> Buildroot로 빌드한 이미지는 ./output/images/all.bin 파일로 생성됨  
+### 4. 이미지 빌드
 <br/>
 
-/# AST2600도 동일한 방법으로 이미지를 빌드함
+```
+Buildroot로 이미지 빌드
+$ ./build_option.sh
+빌드한 이미지는 ./output/images/all.bin 파일로 생성됨
+```
 
+### 5. BMC에 이미지 쓰기
 #### AST2500(2600)-EVB
 1. 빌드한 이미지 파일을 FTP로 다운받아 Windows 10 디렉토리로 옮김
 2. AST2500 Evaluation Board의 좌측에 점퍼 케이블 중 오른쪽 핀을 빼서 GND에 연결하여 BMC Booting을 Disable 
@@ -147,20 +150,61 @@ $ make
 5. Batch 버튼을 클릭하여 이미지를 기록
 6. 기록이 완료되면 서버보드의 BMC ROM 장착 위치에 방향이 맞게 장착
 
-#### AST_2500 
-```
-$ ./build_option.sh
+
+
+## Usage
+
+### 1. KETI-IPMI 실행
+```bash
+$ KETI-IPMI
 ```
 
-#### AST_2600 
-	- SPI 사용해서 올림
+### 2. IPMItool  
+- 사용할 Host Server에 IPMItool 설치  
+```bash
+$ apt-get install -y ipmitool
+```
+- BMC의 Administrator 계정은 ID : admin, Password : admin으로 설정되어있음  
+```bash
+IPMItool 기본 사용법
+$ ipmitool –I <lan/lanplus> -H <BMC IP Address> -U <User ID> -P <User Password> <command>
+```
+> IPMItool 명령어 <https://docs.oracle.com/cd/E40704_01/html/E40350/z400000c1016683.html>  
+
+<br/>  
+
+### 2. KETI-REST 실행
+```bash
+# 8000번 포트 사용
+$ restful_server
+```  
+
+### 3. KETI-REST 지원 API리스트 및 URL
+- System Information  
+
+|   ID   |    URL   |   Method   |                   상세기능                 |
+| ------ | -------- | ---------- | ------------------------------------------ |
+|  ST01  | /sysinfo |    GET     |        IPMI 및 BMC 정보 제공                |
+
+
+<br/>
+
+- FRU Information  
+
+|   ID   |    URL   |   Method   |               상세기능        |     
+| ------ | -------- | -----------|------------------------------- |
+|  FU01  |   /fru   |     GET    |    BMC FRU 정보 제공            |
+|  FU02  |   /fru   |     PUT    |    BMC FRU 정보 수정             |
+
+<br/>
+
+
 
 
 
 ## Files
 - 중요한 코드파일 역할 설명
 
-## How To Use IBMC
 
 ## Usage Example
 
