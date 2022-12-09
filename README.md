@@ -201,15 +201,15 @@ $ restful_server
 - Server Health  
 
 |   ID   |    URL   |   Method   |                       상세기능                       |     
-| ------ | -------- | -----------   |---------------------------------------------------- |
+| ------ | -------- | -----------   |---------------------------------------------------- |  
 |  SH01  |   /sensor   |     GET    |    센서 상태 정보 제공                            |
 |  SH02  |   /sensor   |     PUT    |    센서 Threshold 값 수정                         |
 |  SH03  |   /event    |     GET    |    BIOS, Sensor, System Event Log 정보 제공       |
 
 - Configuration
 
-|   ID      |   URL    |   Method    |                   상세기능                        |
-|---------- |----------|-------------|---------------------------------------------------|
+|   ID      |   URL    |   Method    |                   상세기능                        |  
+|---------- |----------|-------------|---------------------------------------------------|  
 |  CF01      |   /ddns    |     GET    |         Dynamic DNS 설정 정보 제공                      |  
 |  CF02      |   /ddns     |    POST     |        Dynamic DNS 설정 정보 수정                       |  
 |  CF03      |    /network    |    GET     |        BMC 네트워크 정보 제공                       |  
@@ -222,6 +222,42 @@ $ restful_server
 |  CF10      |   /ssl     |   GET      |          SSL 인증서 정보 제공                    |  
 |  CF11      |   /activedir     |   GET      |          Active Directory 그룹 정보 제공                 |  
 |  CF12      |   /activedir     |   POST      |          Active Directory 그룹 추가                 |  
+|  CF13      |   /ldap     |   GET      |          LDAP 정보 제공                 |  
+|  CF14      |   /ldap     |   PUT      |          LDAP 설정 정보 수정                 |  
+|  CF13      |   /ldap     |   GET      |          LDAP 정보 제공                 |  
+|  CF15      |   /radius     |   GET      |         RADIUS 정보 제공                 |  
+|  CF16      |   /radius     |   POST      |         RADIUS 설정 정보 수정               |  
+|  CF17      |   /user    |   GET      |         BMC User 리스트 제공                |  
+|  CF18      |   /user    |   POST      |         BMC User 정보 추가                |  
+|  CF19      |   /user    |   DELETE      |         BMC User 삭제                |  
+|  CF20      |   /activedir     |   DELETE      |          Active Directory 설정 정보 삭제                 |  
+
+- Main Page  
+|   ID   |    URL   |   Method   |                       상세기능                       |  
+|---------- |----------|-------------|---------------------------------------------------|  
+|   MP00  |   /main?INDEX=0    |   GET   |                   메인 페이지 모든 정보 제공                           |  
+|   MP01  |   /main?INDEX=1    |   GET   |                   System Event Log 정보 제공                           |  
+|   MP02  |   /main?INDEX=2    |   GET   |                   Memory Controller 온도 정보 제공                           |  
+|   MP03  |   /main?INDEX=3    |   GET   |                   Ethernet Controller 온도 정보 제공                           |  
+|   MP04  |   /main?INDEX=4    |   GET   |                  System Board 온도 정보 제공                            |  
+|   MP05  |   /main?INDEX=5    |   GET   |                  Power Module 전력량과 전류량 정보 제공                            |  
+|   MP06  |   /main?INDEX=6    |   GET   |                 서버보드 Fan, CPU Fan RPM 정보 제공                            |  
+|   MP07  |   /main?INDEX=7    |   GET   |                 BMC 네트워크 설정 및 펌웨어 버전정보 제공                             |  
+|   MP08  |   /main?INDEX=8    |   GET   |                센서 및 하드웨어 설치 유무 정보 제공                              |  
+
+- Remote Control
+|   ID   |    URL   |   Method   |                       상세기능                       |  
+|---------- |----------|-------------|---------------------------------------------------|  
+|   RC01   |    /power   |   GET   |                       Host 서버 전원 상태 정보 제공                      | 
+|   RC02   |    /power   |   PUT   |                       Host 서버 전원 상태 제어                      |  
+
+- Maintenance
+|   ID   |    URL   |   Method   |                       상세기능                       |  
+|---------- |----------|-------------|---------------------------------------------------|  
+
+
+
+
 
 
 
