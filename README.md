@@ -122,6 +122,30 @@ $ make
 ```
 
 ### 4. Buildroot 이미지 빌드 방법
+<br/> Buildroot로 빌드한 이미지는 ./output/images/all.bin 파일로 생성됨  
+<br/>
+
+/# AST2600도 동일한 방법으로 이미지를 빌드함
+
+#### AST2500(2600)-EVB
+1. 빌드한 이미지 파일을 FTP로 다운받아 Windows 10 디렉토리로 옮김
+2. AST2500 Evaluation Board의 좌측에 점퍼 케이블 중 오른쪽 핀을 빼서 GND에 연결하여 BMC Booting을 Disable 
+3. 좌측 상단에 GND 핀에 점퍼 케이블을 연결
+4. SF100-ISP Programmmer를 BMC ROM에 연결
+5. AST2500 Evaluation Board 전원 켜기
+6. Dediprog Engineering 소프트웨어를 실행시킨 뒤 Memory Type을 설정
+7. Load file 버튼을 클릭하여 다운받은 all.bin 파일을 불러옴
+8. Erase 버튼을 클릭하여 롬을 초기화한 뒤 Prog 버튼을 클릭하여 새 이미지를 기록
+9. BMC Booting 점퍼 와이어를 다시 연결하고 SF100-ISP Programmer를 제거
+10. 전원 인가
+
+#### 32MB/64MB ROM
+1. 펌웨어를 기록할 ROM을 칩 좌측 상단의 점(1번 핀)을 기준으로 장착
+2. SF100 ISP Programmer에 롬을 장착한 뒤 PC에 연결
+3. Dediprog Engineering을 실행한 뒤 장착한 ROM의 모델명을 선택
+4. 좌측 상단의 File 버튼을 클릭하여 기록할 펌웨어 이미지 파일을 선택
+5. Batch 버튼을 클릭하여 이미지를 기록
+6. 기록이 완료되면 서버보드의 BMC ROM 장착 위치에 방향이 맞게 장착
 
 #### AST_2500 
 ```
