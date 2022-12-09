@@ -12,8 +12,9 @@
 	2.5. [BMC에 이미지 쓰기](#5-bmc에-이미지-쓰기)  
 3. [Usage](#usage)  
 	3.1. [KETI-IPMI 실행](#1-keti-ipmi-실행)  
-	3.2. [IPMItool](#2-ipmitool)
+	3.2. [IPMItool](#2-ipmitool)  
 	3.3. [KETI-REST 실행](#3-keti-rest-실행)  
+	3.4. [KETI-REST 지원 API 리스트 및 URL](#4-keti-rest-지원-api-리스트-및-url)
 	
 
 
@@ -173,13 +174,13 @@ $ ipmitool –I <lan/lanplus> -H <BMC IP Address> -U <User ID> -P <User Password
 
 <br/>  
 
-### 2. KETI-REST 실행
+### 3. KETI-REST 실행
 ```bash
 # 8000번 포트 사용
 $ restful_server
 ```  
 
-### 3. KETI-REST 지원 API 리스트 및 URL
+### 4. KETI-REST 지원 API 리스트 및 URL
 - System Information  
 
 |   ID   |    URL   |   Method   |                   상세기능                 |
