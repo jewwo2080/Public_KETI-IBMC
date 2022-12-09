@@ -64,7 +64,11 @@ $ ./prepare_buildTool.sh
 ```  
 
 #### 2. AST2600  
-- **Buildroot 2020.08** 버전으로 변경하여 위와 동일하게 진행
+- **Buildroot 2020.08** 버전 설치
+```bash
+/home/keti/BMC_SDK
+$ ./prepare_buildTool.sh
+```
 <br/>  
 
 > Buildroot 공식 홈페이지에서 권장하는 패키지와 옵션 패키지  
