@@ -6,6 +6,8 @@
 1. [Introduction of IBMC](#introduction-of-ibmc)
 2. [Requirements](#requirements)  
 	2.1. [Buildroot 환경 구성](#1-buildroot-환경-구성)  
+		2.1.1. [AST2500](#1-ast2500)  
+		2.1.2. [AST2600](#2-ast2600)  
 	2.2. [Buildroot menuconfig](#2-buildroot-menuconfig)  
 	2.3. [KETI-IPMI 빌드](#3-keti-ipmi-빌드)  
 	2.4. [이미지 빌드](#4-이미지-빌드)  
@@ -79,7 +81,7 @@ $ ./prepare_buildTool.sh
 
 |    Target Option  | AST2500 |   AST2600                                         |                                           
 | ------ | -------- | ------------------------------------------------ |  
-|  Target Architecture  | ARM ( little endian) |   Arm ( little endian    |  
+|  Target Architecture  | ARM ( little endian) |   ARM ( little endian )   |  
 |  Target Binary Format |  ELF                 |    ELF                   |  
 |  Target Architecture Variant |  arm1176jzf-s  |    Cortex-A7             |  
 |  Target ABI            |  EABI                |     EABIhf               |  
@@ -134,7 +136,7 @@ $ ./sk_make.sh
 
 #### AST_2600
 ```bash
-$ cd /home/keti/BMC_SDK
+$ cd /home/keti/BMC_SDK/source/AST2600_BMC
 $ cmake CMakeLists.txt
 $ make
 ```
@@ -227,14 +229,14 @@ $ restful_server
 
 - Configuration
 
-|   ID      |   URL    |   Method    |                   상세기능                        |  
-|---------- |----------|-------------|---------------------------------------------------|  
-|  CF01      |   /ddns    |     GET    |         Dynamic DNS 설정 정보 제공                      |  
-|  CF02      |   /ddns     |    POST     |        Dynamic DNS 설정 정보 수정                       |  
-|  CF03      |    /network    |    GET     |        BMC 네트워크 정보 제공                       |  
-|  CF04      |    /network    |    POST     |       BMC 네트워크 정보 수정                        |  
-|  CF05      |   /ntp     |   GET      |            NTP(Network Time Protocol) 정보 제공                   |  
-|  CF06      |   /ntp     |   POST      |           NTP 설정 정보 수정 (자동 / 수동)                    |  
+|   ID      |   URL    |   Method        |                   상세기능                                              |  
+|---------- |----------|-----------------|-------------------------------------------------------------------------|  
+|  CF01      |   /ddns    |     GET      |         Dynamic DNS 설정 정보 제공                                    |  
+|  CF02      |   /ddns     |    POST     |        Dynamic DNS 설정 정보 수정                                   |  
+|  CF03      |    /network    |    GET    |        BMC 네트워크 정보 제공                                     |  
+|  CF04      |    /network    |    POST     |       BMC 네트워크 정보 수정                                     |  
+|  CF05      |   /ntp     |   GET      |            NTP(Network Time Protocol) 정보 제공                       |  
+|  CF06      |   /ntp     |   POST      |           NTP 설정 정보 수정 (자동 / 수동)                           |  
 |  CF07      |   /smtp     |   GET      |           SMTP(Simple Message Transfer Protocol) 정보 제공                    |  
 |  CF08      |   /smtp     |   POST      |          SMTP 설정 정보 수정                     |  
 |  CF09      |   /ssl     |   POST      |          SSL 인증서 생성                     |  
@@ -252,7 +254,7 @@ $ restful_server
 
 - Main Page  
 
-|   ID   |    URL   |   Method   |                       상세기능                       |  
+|   ID   |    URL   |   Method   |                       상세기능                         |  
 |---------- |----------|-------------|---------------------------------------------------|  
 |   MP00  |   /main?INDEX=0    |   GET   |                   메인 페이지 모든 정보 제공                           |  
 |   MP01  |   /main?INDEX=1    |   GET   |                   System Event Log 정보 제공                           |  
